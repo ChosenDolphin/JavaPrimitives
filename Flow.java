@@ -9,6 +9,7 @@ public class Flow extends JFrame implements ActionListener
   DrawPanel canvas;
   JPanel panelBtn;
   JComboBox<String> colorBox;
+  JComboBox<String> shapeBox;
 
   public static void main(String[] args)
   {
@@ -19,19 +20,24 @@ public class Flow extends JFrame implements ActionListener
   {
 
     this.setLayout(new BorderLayout());
-    btnDraw = new JButton("Draw a rectangle");
+
+    String shapesList[]={" ", "Line", "Rectangle", "Oval", "Arc"};
+    shapeBox = new JComboBox<>(shapesList);  
+
+    btnDraw = new JButton("Draw");
     btnDraw.addActionListener(this);
     btnDraw.setVisible(true);
 
     String colorsList[]={"Black", "Red", "Blue", "Green"};
     colorBox = new JComboBox<>(colorsList);
-    colorBox.addActionListener(this);
+    //colorBox.addActionListener(this);
 
     btnColor = new JButton("Change the color");
     btnColor.addActionListener(this);
     btnColor.setVisible(true);
 
     panelBtn = new JPanel();
+    panelBtn.add(shapeBox);
     panelBtn.add(btnDraw);
     panelBtn.add(colorBox);
     panelBtn.add(btnColor);
@@ -41,7 +47,7 @@ public class Flow extends JFrame implements ActionListener
     canvas = new DrawPanel();
     this.add(canvas, BorderLayout.CENTER);
 
-    this.setSize(400, 400);
+    this.setSize(500, 450);
     this.setVisible(true);
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
   } //end constructor
@@ -51,6 +57,7 @@ public class Flow extends JFrame implements ActionListener
   {
     if(e.getSource() == btnDraw)
     {
+      canvas.setShape(shapeBox.getSelectedItem().toString());
       canvas.repaint();
     }
     else if(e.getSource() == btnColor)
@@ -83,6 +90,7 @@ public class Flow extends JFrame implements ActionListener
 class DrawPanel extends JPanel
 {
   private Color col;
+  private String shape;
 
   public static void main(String[] args)
   {
@@ -103,10 +111,28 @@ class DrawPanel extends JPanel
     Color c = getColor();
     g.setColor(col);
  
-    int width = (int)(Math.random() * 200);
-    int height = (int)(Math.random() * 200);
+    int width = (int)(Math.random() * 300);
+    int height = (int)(Math.random() * 300);
 
-    g.drawRect(50, 50, width, height);
+    if(shape == "Line")
+    {
+      g.drawLine(150, 175, width, height);
+    }
+    else if(shape == "Rectangle")
+    {
+      g.drawRect(90, 90, width, height);
+    }
+    else if(shape == "Oval")
+    {
+      g.drawOval(90, 90, width, height);
+    }
+    else if(shape == "Arc")
+    {
+      int sAng = (int)(Math.random() * 360);
+      int aAng = (int)(Math.random() * 360);
+      g.drawArc(90, 90, width, height, sAng, aAng);
+    }
+
   }//end paintComponent
 
   public Color getColor()
@@ -119,4 +145,13 @@ class DrawPanel extends JPanel
     col = btn;
   }
 
+  public String getShape()
+  {
+    return shape;
+  }
+
+  public void setShape(String s)
+  {
+    shape = s;
+  }
 }//end DrawPanel
