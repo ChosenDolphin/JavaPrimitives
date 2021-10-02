@@ -1,5 +1,8 @@
 # JavaPrimitives
- I kept my Primitives assignment simple. It ended up being half java GUIs and primatives, and half me relearning java. I tried doing this last year, but was unable to finish. So, this year I took my old, hoplessly busted code, fixed it and added on to it. I learned how to use buttons and comboBoxes with lines, arcs, rectangles, and ovals. I have made something that uses drawing before and was going to add that function to my little drawing program, but my computer refuses to let me into putty or winscp. So, who knows if I'll even be able to update the code in this repo to the current version.
+##Primitives Documentation
+##Alec Garza
+
+I kept my Primitives assignment simple. It ended up being half java GUIs and primatives, and half me relearning java. I tried doing this last year, but was unable to finish. So, this year I took my old, hoplessly busted code, fixed it and added on to it. I learned how to use buttons and comboBoxes with lines, arcs, rectangles, and ovals. I have made something that uses drawing before and was going to add that function to my little drawing program, but my computer refuses to let me into putty or winscp. So, who knows if I'll even be able to update the code in this repo to the current version.
   
 Thanks to the tesla servers keeping me from working, and my own procrastination, my drawing program hs two features. You can select a Line, Rectangle, Oval, or Arc from a list, then press a button to draw one of random size/orientation. The second feature is changing the color of whatever shape you want. You can use black, red, blue, or green from a list and confirm it with the change color button. Then te next thing you draw will be in that color.
 
