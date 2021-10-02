@@ -1,6 +1,5 @@
 # JavaPrimitives
-## Primitives Documentation
-## Alec Garza
+### Primitives Documentation: Alec Garza
 
 I kept my Primitives assignment simple. It ended up being half java GUIs and primatives, and half me relearning java. I tried doing this last year, but was unable to finish. So, this year I took my old, hoplessly busted code, fixed it and added on to it. I learned how to use buttons and comboBoxes with lines, arcs, rectangles, and ovals. I have made something that uses drawing before and was going to add that function to my little drawing program, but my computer refuses to let me into putty or winscp. So, who knows if I'll even be able to update the code in this repo to the current version.
   
